@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
 
 class NewsItem extends Component {
   constructor(props) {
@@ -8,8 +8,7 @@ class NewsItem extends Component {
 
   _onPress = () => {
     this.props.onPressItem('Detail', {
-      title: this.props.title,
-      data: this.props.body
+      company: this.props.company,
     });
   };
 
@@ -17,8 +16,8 @@ class NewsItem extends Component {
     return (
       <TouchableOpacity onPress={this._onPress}>
         <View>
-          <Text>{this.props.title}</Text>
-          <Text>{this.props.body}</Text>
+          <Text>{this.props.company}</Text>
+          <Image source={{uri: this.props.image}} style={{width: 100, height: 100}}/>
         </View>
       </TouchableOpacity>
     );

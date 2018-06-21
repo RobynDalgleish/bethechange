@@ -1,21 +1,21 @@
 import React from 'react';
 import { View, FlatList } from 'react-native';
-
+import Data from '../data';
 import NewsItem from '../Components/NewsItem';
 
-const data = [
-  { title: 'hello', id: 1, body: 'this is the body and it is supe cool' },
-  { title: 'item 2', id: 1, body: 'this is the body' }
-];
 class HomeScreen extends React.Component {
   _keyExtractor = (item, index) => String(index);
 
   _renderItem = ({ item }) => (
     <NewsItem
-      id={item.id}
       onPressItem={this.props.navigation.navigate}
-      title={item.title}
-      body={item.body}
+      company={item.company}
+      image={item.image}
+      score={item.score}
+      parentCompany={item.parentCompany}
+      description={item.description}
+      articles={item.articles}
+      alternateSuggestions={item.alternateSuggestions}
     />
   );
 
@@ -23,7 +23,7 @@ class HomeScreen extends React.Component {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <FlatList
-          data={data}
+          data={Data}
           renderItem={this._renderItem}
           keyExtractor={this._keyExtractor}
         />
