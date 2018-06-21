@@ -1,10 +1,10 @@
 import React from 'react';
 import { Button, StyleSheet } from 'react-native';
-import { createDrawerNavigator } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation';
 
 class MyHomeScreen extends React.Component {
   static navigationOptions = {
-    drawerLabel: 'Home'
+    drawerLabel: 'Cool'
   };
 
   render() {
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const MyApp = createDrawerNavigator({
+const MyApp = createStackNavigator({
   Home: {
     screen: MyHomeScreen
   },
