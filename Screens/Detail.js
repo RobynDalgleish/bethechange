@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, View, Button } from 'react-native';
 import { Text, Card } from 'react-native-elements';
 
+import Data from '../data';
 class DetailScreen extends React.Component {
   render() {
     const {

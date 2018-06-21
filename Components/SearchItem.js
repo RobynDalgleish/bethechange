@@ -8,7 +8,10 @@ class NewsItem extends Component {
   }
 
   _onPress = () => {
-    console.log('cool');
+    this.props.onPressItem('Detail', {
+      company: this.props.company,
+      ...this.props
+    });
   };
 
   render() {
@@ -23,14 +26,14 @@ class NewsItem extends Component {
           shadowOpacity: 0.2
         }}
       >
-        {this.props.urlToImage ? (
+        {this.props.image ? (
           <Image
-            source={{ uri: this.props.urlToImage }}
+            source={{ uri: this.props.image }}
             style={{ width: 144, minHeight: 135 }}
           />
         ) : null}
         <View style={{ padding: 10, flex: 1 }}>
-          <Text>{this.props.description}</Text>
+          <Text>{this.props.company}</Text>
           <TouchableHighlight onPress={this._onPress}>
             <Text style={{ color: 'blue', marginTop: 10 }}>Read More</Text>
           </TouchableHighlight>

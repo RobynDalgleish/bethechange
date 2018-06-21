@@ -37,10 +37,15 @@ class MainApp extends Component {
 
   render() {
     return React.createElement(
-      createSwitchNavigator({
-        Onboard: { screen: Onboarding },
-        Home: homeDetailRoutes
-      })
+      createStackNavigator(
+        {
+          Home: Home,
+          Detail: Detail
+        },
+        {
+          headerMode: 'none'
+        }
+      )
     );
   }
 }
