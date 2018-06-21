@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
+import { Card, Button } from 'react-native-elements';
 
 class NewsItem extends Component {
   constructor(props) {
@@ -9,17 +10,15 @@ class NewsItem extends Component {
   _onPress = () => {
     this.props.onPressItem('Detail', {
       company: this.props.company,
+      ...this.props
     });
   };
 
   render() {
     return (
-      <TouchableOpacity onPress={this._onPress}>
-        <View>
-          <Text>{this.props.company}</Text>
-          <Image source={{uri: this.props.image}} style={{width: 100, height: 100}}/>
-        </View>
-      </TouchableOpacity>
+      <Card title={this.props.company} image={{ uri: this.props.image }}>
+        <Button onPress={this._onPress} title={'Read Now'} />
+      </Card>
     );
   }
 }

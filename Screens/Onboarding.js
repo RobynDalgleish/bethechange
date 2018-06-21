@@ -3,7 +3,6 @@ import { StyleSheet, Text, View, Button } from 'react-native';
 
 class OnBoardingScreen extends React.Component {
   render() {
-    console.log(this.props.navigation);
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <Text>OnBoardingScreen!</Text>
