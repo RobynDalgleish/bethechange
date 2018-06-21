@@ -3,9 +3,13 @@ import { StyleSheet, Text, View } from 'react-native';
 
 class DetailScreen extends React.Component {
   render() {
+    console.log(this.props.navigation);
+    const { title, data } = this.props.navigation.state.params;
+
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Details!</Text>
+        <Text>{title}</Text>
+        <Text>{data}</Text>
       </View>
     );
   }
