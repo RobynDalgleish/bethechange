@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { SecureStore } from 'expo';
+import { SecureStore, Font } from 'expo';
 
 import { createSwitchNavigator, createStackNavigator } from 'react-navigation';
 
@@ -15,20 +15,20 @@ const homeDetailRoutes = createStackNavigator({
 
 class MainApp extends Component {
   state = {
-    onboarded: false
+    onboarded: false,
+    fontLoaded: false
   };
 
-  // componentWillMount() {
-  //   try {
-  //     SecureStore.deleteItemAsync('onboarded')
-  //   } catch (error) {
-  //     console.log('oops')
-  //   }
-  // }
 
-  componentDidMount() {
+
+  async componentDidMount() {
+
+    await Font.loadAsync({
+      'muli-regular': require('./assets/fonts/Muli-Regular.ttf'),
+    });
+
     try {
-      SecureStore.getItemAsync('onboarded').then(() =>
+      await SecureStore.getItemAsync('onboarded').then(() =>
         this.setState({ onboarded: true })
       );
     } catch (err) {

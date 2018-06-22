@@ -1540,13 +1540,6 @@ color-support@^1.1.3:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/color-support/-/color-support-1.1.3.tgz#93834379a1cc9a0c61f82f52f0d04322251bd5a2"
 
-color@3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/color/-/color-3.0.0.tgz#d920b4328d534a3ac8295d68f7bd4ba6c427be9a"
-  dependencies:
-    color-convert "^1.9.1"
-    color-string "^1.5.2"
-
 color@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/color/-/color-2.0.1.tgz#e4ed78a3c4603d0891eba5430b04b86314f4c839"
@@ -1815,10 +1808,6 @@ event-target-shim@^1.0.5:
 eventemitter3@^3.0.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-3.1.0.tgz#090b4d6cdbd645ed10bf750d4b5407942d7ba163"
-
-events@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/events/-/events-1.1.1.tgz#9ebdb7635ad099c70dcc4c2a1f5004288e8bd924"
 
 exec-sh@^0.2.0:
   version "0.2.1"
@@ -2678,10 +2667,6 @@ lodash.isempty@^4.4.0:
 lodash.map@^4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/lodash.map/-/lodash.map-4.6.0.tgz#771ec7839e3473d9c4cde28b19394c3562f4f6d3"
-
-lodash.merge@^4.0.0:
-  version "4.6.1"
-  resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.1.tgz#adc25d9cb99b9391c59624f379fbba60d7111d54"
 
 lodash.omit@^4.5.0:
   version "4.5.0"
@@ -3668,19 +3653,6 @@ react-native-maps@0.21.0:
     babel-plugin-module-resolver "^2.3.0"
     babel-preset-react-native "1.9.0"
 
-react-native-material-design-styles@^0.2.6:
-  version "0.2.7"
-  resolved "https://registry.yarnpkg.com/react-native-material-design-styles/-/react-native-material-design-styles-0.2.7.tgz#428560ef4d0659db1163c9f9b5476d886ed22d57"
-
-react-native-material-ui@^1.22.4:
-  version "1.22.4"
-  resolved "https://registry.yarnpkg.com/react-native-material-ui/-/react-native-material-ui-1.22.4.tgz#1dfcf897a57beadfed2fbb8512df48680528d6e0"
-  dependencies:
-    color "3.0.0"
-    lodash.merge "^4.0.0"
-    prop-types "^15.5.10"
-    react-native-material-design-styles "^0.2.6"
-
 react-native-reanimated@1.0.0-alpha.3:
   version "1.0.0-alpha.3"
   resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-1.0.0-alpha.3.tgz#42983aa41911791cd3186fd3a18a788c3d4c3601"
@@ -3710,12 +3682,6 @@ react-native-svg@6.2.2:
     color "^2.0.1"
     lodash "^4.16.6"
     pegjs "^0.10.0"
-
-react-native-swipe-a-lot@^0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/react-native-swipe-a-lot/-/react-native-swipe-a-lot-0.2.1.tgz#a58df3b0b1554e7a761de4f1b2f08da2ef0e44e3"
-  dependencies:
-    events "^1.1.1"
 
 react-native-tab-view@^0.0.77:
   version "0.0.77"

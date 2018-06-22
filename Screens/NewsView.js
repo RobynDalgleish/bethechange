@@ -1,5 +1,6 @@
 import React from 'react';
-import { WebView, View, Button } from 'react-native';
+import { WebView, View } from 'react-native';
+import { Button } from 'react-native-elements';
 import { Constants } from 'expo';
 
 class NewsView extends React.Component {
@@ -7,25 +8,25 @@ class NewsView extends React.Component {
     const { uri } = this.props.navigation.state.params;
     return (
       <View
-        style={{
-          flex: 1,
-          paddingTop: Constants.statusBarHeight
-        }}
+      style={{
+        flex: 1,
+        paddingTop: Constants.statusBarHeight
+      }}
       >
         <View
           style={{
-            justifyContent: 'flex-start',
-            alignItems: 'center',
+            flexDirection: 'row',
             paddingHorizontal: 25,
-            flexDirection: 'row'
+            paddingVertical: 25
           }}
         >
           <Button
+            clear
             onPress={() => this.props.navigation.goBack()}
-            title="Go Back"
+            title="Go Back" 
           />
         </View>
-        <WebView source={{ uri }} style={{ marginTop: 20 }} />
+        <WebView source={{ uri }} />
       </View>
     );
   }

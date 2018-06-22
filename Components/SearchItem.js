@@ -32,10 +32,10 @@ class NewsItem extends Component {
             style={{ width: 144, minHeight: 100 }}
           />
         ) : null}
-        <View style={{ padding: 10, flex: 1 }}>
+        <View style={{ padding: 15, flex: 1, justifyContent: 'space-between' }}>
           <Text>{this.props.company}</Text>
           <TouchableHighlight onPress={this._onPress}>
-            <Text style={{ color: 'blue', marginTop: 10 }}>Read More</Text>
+            <Text style={{ color: '#0B6EFD', marginTop: 20 }}>READ MORE</Text>
           </TouchableHighlight>
         </View>
       </View>

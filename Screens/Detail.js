@@ -3,13 +3,12 @@ import {
   StyleSheet,
   ScrollView,
   View,
-  Button,
   Dimensions,
   Image,
   FlatList,
   TouchableHighlight
 } from 'react-native';
-import { Text, Card } from 'react-native-elements';
+import { Text, Card, Button } from 'react-native-elements';
 import { Constants } from 'expo';
 
 import Data from '../data';
@@ -35,17 +34,23 @@ class DetailScreen extends React.Component {
       >
         <View
           style={{
-            justifyContent: 'flex-start',
-            alignItems: 'center',
+            flexDirection: 'row',
             paddingHorizontal: 25,
-            flexDirection: 'row'
+            paddingVertical: 25
           }}
         >
           <Button
+            clear
             onPress={() => this.props.navigation.navigate('Home')}
-            title="Go Back"
+            title="Go Back" 
           />
-          <Text h5>{company}</Text>
+          <Text h5 
+            style={{
+              fontSize: 25,
+              paddingLeft: 20,
+              // fontFamily: 'muli-regular'
+            }}
+          >{company}</Text>
         </View>
         <ScrollView contentInset={{ bottom: 50 }}>
           <Image
@@ -65,12 +70,12 @@ class DetailScreen extends React.Component {
               }}
             >
               <View style={{ alignItems: 'stretch', marginRight: 25 }}>
-                <Text style={{ color: '#9B9B9B' }}>Score</Text>
-                <Text style={{ color: '#F5A623', fontSize: 36 }}>{score}</Text>
+                <Text style={{ color: '#9B9B9B', fontFamily: 'muli-regular' }}>Score</Text>
+                <Text style={{ color: '#F5A623', fontSize: 36, fontFamily: 'muli-regular' }}>{score}</Text>
               </View>
               <View style={{ alignItems: 'stretch', marginRight: 25 }}>
                 <Text style={{ color: '#9B9B9B' }}>Parent</Text>
-                <Text style={{ color: '#000' }}>{parentCompany}</Text>
+                <Text style={{ color: '#000', fontSize: 20 }}>{parentCompany}</Text>
               </View>
             </View>
             <View style={{ paddingVertical: 25 }}>
@@ -96,7 +101,7 @@ class DetailScreen extends React.Component {
                       shadowOffset: { height: 5 },
                       shadowColor: 'black',
                       shadowOpacity: 0.2,
-                      minHeight: 135
+                      minHeight: 120
                     }}
                   >
                     {item.articleImage ? (
@@ -111,7 +116,7 @@ class DetailScreen extends React.Component {
                       />
                     )}
                     <View
-                      style={{ padding: 10, flex: 1, justifyContent: 'center' }}
+                      style={{ padding: 15, flex: 1, justifyContent: 'space-between' }}
                     >
                       <Text>{item.articleTitle}</Text>
                       <TouchableHighlight
@@ -121,8 +126,8 @@ class DetailScreen extends React.Component {
                           })
                         }
                       >
-                        <Text style={{ color: 'blue', marginTop: 10 }}>
-                          Read More
+                        <Text style={{ color: '#0B6EFD', marginTop: 10 }}>
+                          READ MORE
                         </Text>
                       </TouchableHighlight>
                     </View>

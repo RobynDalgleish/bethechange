@@ -23,7 +23,7 @@ class NewsItem extends Component {
           shadowOffset: { height: 5 },
           shadowColor: 'black',
           shadowOpacity: 0.2,
-          minHeight: 135
+          minHeight: 135,
         }}
       >
         {this.props.urlToImage ? (
@@ -37,10 +37,22 @@ class NewsItem extends Component {
             style={{ width: 144, height: 144 }}
           />
         )}
-        <View style={{ padding: 10, flex: 1, justifyContent: 'center' }}>
+        <View style={{ padding: 15, flex: 1, justifyContent: 'space-between' }}>
           <Text>{this.props.title}</Text>
-          <TouchableHighlight onPress={this._onPress}>
-            <Text style={{ color: 'blue', marginTop: 10 }}>Read More</Text>
+
+
+          {/* for read more button edit touchable highlight*/}
+          <TouchableHighlight 
+            onPress={this._onPress}
+            activeOpacity={0}
+          >
+            <Text 
+              style={{ 
+                color: '#0B6EFD', 
+                marginTop: 10
+              }}>
+                READ MORE
+            </Text>
           </TouchableHighlight>
         </View>
       </View>
