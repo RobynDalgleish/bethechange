@@ -5,6 +5,7 @@ import { createSwitchNavigator, createStackNavigator } from 'react-navigation';
 
 import Home from './Screens/Home';
 import Detail from './Screens/Detail';
+import NewsView from './Screens/NewsView';
 import Onboarding from './Screens/Onboarding';
 
 const homeDetailRoutes = createStackNavigator({
@@ -40,6 +41,7 @@ class MainApp extends Component {
       createStackNavigator(
         {
           Home: Home,
+          News: NewsView,
           Detail: Detail
         },
         {

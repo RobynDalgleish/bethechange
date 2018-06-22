@@ -14,7 +14,7 @@ class DetailScreen extends React.Component {
       articles,
       alternateSuggestions
     } = this.props.navigation.state.params;
-    console.log(highlights);
+
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <Text h2>{company}</Text>

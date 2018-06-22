@@ -28,11 +28,11 @@ class HomeScreen extends React.Component {
 
   _getFiles = async () => {
     try {
-      const res = fetch(
+      const res = await fetch(
         `https://newsapi.org/v2/everything?q=lgbt-boycott&apiKey=3b87723479df421ebd40f0ff2171db84`
       );
-      res.then(data => data.json()).then(data => {
-        console.log(data);
+
+      await res.json().then(data => {
         this.setState({ news: data.articles });
       });
     } catch (err) {
@@ -56,7 +56,7 @@ class HomeScreen extends React.Component {
   );
 
   _renderNews = ({ item }) => {
-    return <NewsItem {...item} />;
+    return <NewsItem {...item} onPressItem={this.props.navigation.navigate} />;
   };
 
   _filterItems = term => {
@@ -99,7 +99,10 @@ class HomeScreen extends React.Component {
               source={require('../assets/logo.png')}
               style={{ width: 165, height: 62 }}
             />
-            <Text h4>
+            <Text
+              h4
+              style={{ color: 'gray', fontWeight: '300', marginTop: 25 }}
+            >
               Be an ally and shop responsibly by searching for products before
               you use them
             </Text>
@@ -135,7 +138,9 @@ class HomeScreen extends React.Component {
         <View style={styles.displayList}>
           {!this.state.searching ? (
             <View>
-              <Text h3>News</Text>
+              <Text h3 style={{ marginBottom: 15, fontWeight: '300' }}>
+                News
+              </Text>
               <FlatList
                 data={this.state.news}
                 renderItem={this._renderNews}
@@ -146,7 +151,15 @@ class HomeScreen extends React.Component {
             <View>
               {this.state.data.length ? (
                 <View>
-                  <Text h3>Results for {this.state.term}</Text>
+                  <Text
+                    h3
+                    style={{
+                      marginBottom: 15,
+                      fontWeight: '300'
+                    }}
+                  >
+                    Results for {this.state.term}
+                  </Text>
                   <FlatList
                     data={this.state.data}
                     renderItem={this._renderItem}

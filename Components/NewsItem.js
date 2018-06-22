@@ -8,7 +8,9 @@ class NewsItem extends Component {
   }
 
   _onPress = () => {
-    console.log('cool');
+    this.props.onPressItem('News', {
+      uri: this.props.url
+    });
   };
 
   render() {
@@ -30,7 +32,7 @@ class NewsItem extends Component {
           />
         ) : null}
         <View style={{ padding: 10, flex: 1 }}>
-          <Text>{this.props.description}</Text>
+          <Text>{this.props.title}</Text>
           <TouchableHighlight onPress={this._onPress}>
             <Text style={{ color: 'blue', marginTop: 10 }}>Read More</Text>
           </TouchableHighlight>
