@@ -5,17 +5,17 @@ const data = [
     image:
       'https://www.cfacdn.com/img/order/COM/PDP_UPDATE/Images/Entrees/Edit%20NEW_Stack620_PDP_Chick-Fil-A-Sandwich_1085%20%281%29.png',
     score: 10,
-    parentComapny: 'Chick-fil-A',
+    parentCompany: 'Chick-fil-A',
     highlights: [
       'Chick-fil-A CEO Dan Cathy came out as being “very much” against gay marriage.',
       'CEO Dan Cathy was quoted as saying, “We are very much supportive of the family — the biblical definition of the family unit. We are a family-owned business, a family-led business, and we are married to our first wives. We give God thanks for that...we know that it might not be popular with everyone, but thank the Lord, we live in a country where we can share our values and operate on biblical principles.”'
     ],
     articles: [
       {
-        ArticleImage:
+        articleImage:
           'https://www.cfacdn.com/img/order/COM/PDP_UPDATE/Images/Entrees/Edit%20NEW_Stack620_PDP_Chick-Fil-A-Sandwich_1085%20%281%29.png',
-        ArticleTitle: '7 Companies That Don’t Support Gay Rights',
-        ArticleLink:
+        articleTitle: '7 Companies That Don’t Support Gay Rights',
+        articleLink:
           'https://www.huffingtonpost.com/2013/10/16/anti-gay-companies_n_4110344.html'
       }
     ],

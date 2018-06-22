@@ -6,7 +6,8 @@ import {
   Button,
   Dimensions,
   Image,
-  FlatList
+  FlatList,
+  TouchableHighlight
 } from 'react-native';
 import { Text, Card } from 'react-native-elements';
 import { Constants } from 'expo';
@@ -69,7 +70,7 @@ class DetailScreen extends React.Component {
               </View>
               <View style={{ alignItems: 'stretch', marginRight: 25 }}>
                 <Text style={{ color: '#9B9B9B' }}>Parent</Text>
-                <Text style={{ color: '#000' }}>{score}</Text>
+                <Text style={{ color: '#000' }}>{parentCompany}</Text>
               </View>
             </View>
             <View style={{ paddingVertical: 25 }}>
@@ -89,15 +90,42 @@ class DetailScreen extends React.Component {
                 renderItem={({ item }) => (
                   <View
                     style={{
-                      marginBottom: 25,
                       backgroundColor: 'white',
-                      paddingHorizontal: 15,
-                      paddingVertical: 10,
-                      marginTop: 10
+                      flexDirection: 'row',
+                      marginBottom: 15,
+                      shadowOffset: { height: 5 },
+                      shadowColor: 'black',
+                      shadowOpacity: 0.2,
+                      minHeight: 135
                     }}
                   >
-                    <Image source={{ uri: item.ArticleImage }} />
-                    <Text style={{ fontSize: 18 }}>{item.ArticleTitle}</Text>
+                    {item.articleImage ? (
+                      <Image
+                        source={{ uri: item.articleImage }}
+                        style={{ width: 144, minHeight: 135 }}
+                      />
+                    ) : (
+                      <Image
+                        source={require('../assets/noImage.jpg')}
+                        style={{ width: 144, height: 144 }}
+                      />
+                    )}
+                    <View
+                      style={{ padding: 10, flex: 1, justifyContent: 'center' }}
+                    >
+                      <Text>{item.articleTitle}</Text>
+                      <TouchableHighlight
+                        onPress={() =>
+                          this.props.navigation.navigate('News', {
+                            uri: item.articleLink
+                          })
+                        }
+                      >
+                        <Text style={{ color: 'blue', marginTop: 10 }}>
+                          Read More
+                        </Text>
+                      </TouchableHighlight>
+                    </View>
                   </View>
                 )}
               />
@@ -107,13 +135,14 @@ class DetailScreen extends React.Component {
               <FlatList
                 data={alternateSuggestions}
                 keyExtractor={this._keyExtractor}
+                horizontal
                 renderItem={({ item }) => (
                   <View
                     style={{
                       marginBottom: 25,
                       backgroundColor: 'white',
                       paddingHorizontal: 15,
-                      paddingVertical: 10,
+                      paddingVertical: 25,
                       marginTop: 10
                     }}
                   >
