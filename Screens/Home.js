@@ -33,7 +33,7 @@ class HomeScreen extends React.Component {
       );
 
       await res.json().then(data => {
-        this.setState({ news: data.articles });
+        this.setState({ news: data.articles.title });
       });
     } catch (err) {
       console.log('error', err);

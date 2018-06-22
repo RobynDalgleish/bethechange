@@ -22,7 +22,8 @@ class NewsItem extends Component {
           marginBottom: 15,
           shadowOffset: { height: 5 },
           shadowColor: 'black',
-          shadowOpacity: 0.2
+          shadowOpacity: 0.2,
+          minHeight: 135
         }}
       >
         {this.props.urlToImage ? (
@@ -31,7 +32,7 @@ class NewsItem extends Component {
             style={{ width: 144, minHeight: 135 }}
           />
         ) : null}
-        <View style={{ padding: 10, flex: 1 }}>
+        <View style={{ padding: 10, flex: 1, justifyContent: 'center'}}>
           <Text>{this.props.title}</Text>
           <TouchableHighlight onPress={this._onPress}>
             <Text style={{ color: 'blue', marginTop: 10 }}>Read More</Text>
