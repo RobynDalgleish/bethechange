@@ -29,7 +29,7 @@ class NewsItem extends Component {
         {this.props.image ? (
           <Image
             source={{ uri: this.props.image }}
-            style={{ width: 144, minHeight: 125 }}
+            style={{ width: 144, minHeight: 100 }}
           />
         ) : null}
         <View style={{ padding: 10, flex: 1 }}>
