@@ -33,7 +33,7 @@ class HomeScreen extends React.Component {
       );
 
       await res.json().then(data => {
-        this.setState({ news: data.articles.title });
+        this.setState({ news: data.articles });
       });
     } catch (err) {
       console.log('error', err);
@@ -63,6 +63,8 @@ class HomeScreen extends React.Component {
     if (!this.state.searching) {
       this.myScroll.scrollTo({ x: 0, y: 260, animated: false });
     }
+
+    console.log(term);
 
     if (term !== '') {
       var searchTerm = RegExp(term, 'ig');

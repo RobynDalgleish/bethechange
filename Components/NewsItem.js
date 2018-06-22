@@ -31,8 +31,13 @@ class NewsItem extends Component {
             source={{ uri: this.props.urlToImage }}
             style={{ width: 144, minHeight: 135 }}
           />
-        ) : null}
-        <View style={{ padding: 10, flex: 1, justifyContent: 'center'}}>
+        ) : (
+          <Image
+            source={require('../assets/noImage.jpg')}
+            style={{ width: 144, height: 144 }}
+          />
+        )}
+        <View style={{ padding: 10, flex: 1, justifyContent: 'center' }}>
           <Text>{this.props.title}</Text>
           <TouchableHighlight onPress={this._onPress}>
             <Text style={{ color: 'blue', marginTop: 10 }}>Read More</Text>
